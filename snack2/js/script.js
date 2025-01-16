@@ -4,7 +4,6 @@ Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subit
 
 
 //creo l'array con gli oggetti selle squadre
-
 const squadre = [
     {
         'nome': 'Palermo',
@@ -38,26 +37,47 @@ const squadre = [
     },
 ];
 
+
+//funzione per il numero casuale
+function numeroRandom(min,max) {
+    let numeriRandom = (Math.floor(Math.random() * (max - min + 1)) + min);
+    return numeriRandom;
+}
+
+//creo il nuovo array solo con i nomi e i falli subiti
+let nomi_falli = [];
+
 //ciclo per iterare i singoli oggetti
-for (let i = 0; i < squadre.length; i++){
+for (let i = 0; i < squadre.length; i++) {
     
     //creo la variabile per le singole squadre
     let squadra = squadre[i];
 
     ///genero un numero random per i punti
-    let punti = Math.floor((Math.random()) * 5) + 1;
+    let punti = numeroRandom(1, 5);
     
+    //associo il valore (il numero random) alla chiave 'punti'
     squadra['punti fatti'] = punti;
 
+    //creo variabile per i singoli nomi delle squadre
+    let nomi = squadre[i].nome;
+    
     //genero un numero random per i falli subiti
-    let falliSubiti = Math.floor((Math.random()) * 9) + 1;    
+    let falliSubiti = numeroRandom(1, 10);
 
     //associo il valore (il numero random) alla chiave 'falli subiti'
     squadra['falli subiti'] = falliSubiti;
 
-    //creo variabile per i singoli nomi delle squadre
-    nomi = squadre[i].nome;
-    console.log(nomi);
-} 
+     //pusho i nomi e i falli subiti nel nuovo array
+     nomi_falli.push({
+        'nome': squadra.nome,
+        'falli subiti': squadra['falli subiti'],
+    });
+};
 
+//stampo tutti i dati
 console.table(squadre);
+
+//stampo il nuovo array
+console.table(nomi_falli);
+
