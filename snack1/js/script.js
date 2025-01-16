@@ -45,22 +45,18 @@ const biciclette = [
     },
 ];
 
-//creo ciclo che itera su tutti gli oggetti e stampo quella più leggera;
-
-//creo un array che conterrà solo il valore dei singoli pesi
-let pesi = [];
-//ciclo per iterare su tutti gli oggetti
-for (let i = 0; i < biciclette.length; i++){
+//creo la variabile che conterrà il peso minore
+let pesoMinore = biciclette[0].peso;
+//creo i ciclo per iterare su tutti gli oggetti
+for (let i = 1; i < biciclette.length; i++){
     //creo variabile che contiene i singoli pesi
     let peso = biciclette[i].peso;
-    //aggiungo i singoli pesi all'array "pesi"
-    pesi.push(peso);
+    //confronto gli altri pesi al peso iniziale
+    if (peso < pesoMinore) {
+        pesoMinore = peso;
+    }
+} 
+//stampo il meso minore
+console.log(pesoMinore);
 
-} console.log(pesi);
 
-//calcolo la variabile con il valore minore con Math.min
-
-let piuLeggera = Math.min(...pesi);
-
-//stampo il peso minore
-console.log(piuLeggera);
