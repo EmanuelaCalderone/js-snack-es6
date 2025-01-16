@@ -5,44 +5,45 @@
 const biciclette = [
     {
         'nome': 'bici1',
-        'peso': '6'
+        'peso': 6,
     },
     {
         'nome': 'bici2',
-        'peso': '7',
+        'peso': 7,
     },
     {
         'nome': 'bici3',
-        'peso': '8',
+        'peso': 8,
     },
     {
         'nome': 'bici4',
-        'peso': '6.5',
+        'peso': 6.5,
     },
     {
         'nome': 'bici5',
-        'peso': '7.5',
+        'peso': 7.5,
     },
     {
         'nome': 'bici6',
-        'peso': '5.9',
+        'peso': 5.9,
     },
     {
         'nome': 'bici7',
-        'peso': '7.4'
+        'peso': 7.4,
     },
     {
         'nome': 'bici8',
-        'peso': '6.1',
+        'peso': 6.1,
     },
     {
         'nome': 'bici9',
-        'peso': '9',
+        'peso': 9,
     },
     {
         'nome': 'bici10',
-        'peso': '8',
-    }
+        'peso': 8,
+    },
 ];
+console.log(biciclette);
 
-//creo condizione per far stampare a schermo la bici col minor peso
+//creo ciclo che itera su tutti gli oggetti e stampo quella più leggera;
