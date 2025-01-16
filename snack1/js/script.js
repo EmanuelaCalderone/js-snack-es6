@@ -44,6 +44,13 @@ const biciclette = [
         'peso': 8,
     },
 ];
-console.log(biciclette);
 
 //creo ciclo che itera su tutti gli oggetti e stampo quella più leggera;
+let pesi = [];
+for (let i = 0; i < biciclette.length; i++){
+    let peso = biciclette[i].peso;
+    pesi.push(peso);
+} console.log(pesi);
+
+let piuLeggera = Math.min(...pesi);
+console.log(piuLeggera);
