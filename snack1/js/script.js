@@ -25,7 +25,7 @@ const biciclette = [
     },
     {
         'nome': 'bici6',
-        'peso': 5.9,
+        'peso': 7.8,
     },
     {
         'nome': 'bici7',
@@ -37,29 +37,35 @@ const biciclette = [
     },
     {
         'nome': 'bici9',
-        'peso': 9,
+        'peso': 5.9,
     },
     {
         'nome': 'bici10',
-        'peso': 8,
+        'peso': 9,
     },
 ];
 
 //creo la variabile che conterrà il peso minore
 let pesoMinore = biciclette[0].peso;
+
+//creo la variabile con il nome della bici che sarà quella più leggera
+let biciPiuLeggera = biciclette[0].nome;
+
 //creo i ciclo per iterare su tutti gli oggetti
 for (let i = 1; i < biciclette.length; i++){
     //creo variabile che contiene i singoli pesi
     let peso = biciclette[i].peso;
     //confronto gli altri pesi al peso iniziale
     if (peso < pesoMinore) {
-        pesoMinore = "La bici col peso minore ha un peso di:  " + peso + " kg ed è la bici6";
+        pesoMinore = peso;
+        biciPiuLeggera = biciclette[i];
     }
+    //stampo il meso minore
+    console.log(biciPiuLeggera, pesoMinore);
 } 
 
-//stampo il meso minore
-console.log(pesoMinore);
+
 
 let risultato = document.getElementById('peso_minore');
-risultato.innerHTML = pesoMinore;
+risultato.innerHTML = "La bici più leggera è la " + biciPiuLeggera.nome + " che pesa: kg: " + pesoMinore;
 
