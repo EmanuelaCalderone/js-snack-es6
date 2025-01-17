@@ -53,10 +53,13 @@ for (let i = 1; i < biciclette.length; i++){
     let peso = biciclette[i].peso;
     //confronto gli altri pesi al peso iniziale
     if (peso < pesoMinore) {
-        pesoMinore = peso;
+        pesoMinore = "La bici col peso minore ha un peso di:  " + peso + " kg ed è la bici6";
     }
 } 
+
 //stampo il meso minore
 console.log(pesoMinore);
 
+let risultato = document.getElementById('peso_minore');
+risultato.innerHTML = pesoMinore;
 
